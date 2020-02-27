@@ -1,0 +1,27 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "",
+    "build": " babel ./src/app.js --out-file=./scripts/app.js",
+    "build:espect": "babel  --out-file=./scripts/app.js",
+    "build:all": " babel ./src/*.js  --out-file=./scripts/app.js",
+    "watch:build": "yarn build --watch",
+    "clean:babel": "rimraf scripts",
+    "clean:modules": "rimraf node_modules yarn.lock yarn-error.log",
+    "clean:producction": "",
+    "clean:test": ""
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "rimraf": "^3.0.2"
+  }
+}
