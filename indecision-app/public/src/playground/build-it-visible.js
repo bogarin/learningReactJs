@@ -18,6 +18,7 @@ const reset = () => {
   count = 0;
   renderCounterApp();
 };
+const isDisabled = () => app.options.length === 0;
 
 const onFormSubmit = event => {
   event.preventDefault();
@@ -35,8 +36,10 @@ const onRemoveAll = () => {
 };
 
 const onMakeDecision = () => {
-  const randomNum = Math.random();
-  console.log(randomNum);
+  const randomNum = Math.floor(Math.random() * app.options.length);
+  const option = app.options[randomNum];
+  console.log(option);
+  alert(option);
   // renderFormApp();
 };
 
@@ -62,7 +65,9 @@ const renderFormApp = () => {
       <p>
         {app.options.length > 0 ? "Estas son tus opciones" : "No hay opciones"}
       </p>
-      <button onClick={onMakeDecision}>What should i do?</button>
+      <button disabled={isDisabled()} onClick={onMakeDecision}>
+        What should i do?
+      </button>
       <button onClick={onRemoveAll}>Remove All</button>
       <ol>
         {app.options.map(option => (
