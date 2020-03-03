@@ -4,19 +4,19 @@
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
+        { 
             "type": "chrome",
             "request": "attach",
             "name": "Attach to Chrome",
             "port": 9222,
-            "webRoot": "${workspaceFolder}/index.html"
+            "webRoot": "${workspaceFolder}/src"
         },
         {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}/index.html"
+            "url": "http://localhost:8082",
+            "webRoot": "${workspaceFolder}/src"
         }
     ]
 }
