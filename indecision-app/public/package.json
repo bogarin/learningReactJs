@@ -6,7 +6,7 @@
   "scripts": {
     "webpack:start": "webpack-dev-server -d --open",
     "webpack:build": "webpack -p",
-    "babel:build": " babel ./src/app.js --out-file=./scripts/app.js",
+    "babel:build": " babel ./src/app.js --out-file=./scripts/babel/app.js",
     "babel:build:espect": "babel  --out-file=./scripts/app.js",
     "babel:build:all": " babel ./src/*.js  --out-file=./scripts/app.js",
     "babel:watch:build": "yarn build --watch",
