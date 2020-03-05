@@ -49,6 +49,28 @@ class IndecisionComponentApp extends React.Component {
     this.setState(prevState => ({ options: prevState.options.concat(option) }));
   }
 
+  componentDidMount() {
+    try {
+      const json = localStorage.getItem("options");
+    if (json) {
+      const options = JSON.parse(json);
+      this.setState(() => ({ options }));
+    }
+    } catch (error) {
+      
+    }
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      localStorage.setItem("options", json);
+      console.log(json);
+    }
+  }
+  componentWillMount() {
+    console.log("componentWillMount");
+  }
+
   render() {
     const title = "Insercision App";
     const subtitle = "Put your life in the hands of a computer";
@@ -182,7 +204,4 @@ const IsOption = props => {
   );
 };
 
-ReactDOM.render(
-  <IndecisionComponentApp  />,
-  document.getElementById("app")
-);
+ReactDOM.render(<IndecisionComponentApp />, document.getElementById("app"));
