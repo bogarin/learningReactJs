@@ -3,3 +3,4 @@ scripts
 *.lock
 *.log
 .vscode
+public

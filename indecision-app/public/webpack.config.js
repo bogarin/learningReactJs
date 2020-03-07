@@ -5,7 +5,7 @@ module.exports = {
   context: path.resolve(__dirname, "src"),
   entry: "./app.js",
   output: {
-    path: path.join(__dirname, "scripts"),
+    path: path.join(__dirname, "public"),
     filename: "bundle.js"
   },
   devtool: "eval-cheap-module-source-map",
