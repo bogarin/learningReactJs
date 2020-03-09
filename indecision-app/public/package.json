@@ -5,13 +5,14 @@
   "license": "MIT",
   "scripts": {
     "webpack:start": "webpack-dev-server -d --open",
+    "webpack:watch": "webpack-dev-server --open",
     "webpack:build:product": "webpack --mode production",
     "webpack:build": "webpack --mode development",
     "babel:build": " babel ./src/app.js --out-file=./scripts/babel/app.js",
     "babel:build:espect": "babel  --out-file=./scripts/app.js",
     "babel:build:all": " babel ./src/*.js  --out-file=./scripts/app.js",
     "babel:watch:build": "yarn build --watch",
-    "clean:scripts": "rimraf scripts",
+    "clean:scripts": "rimraf scripts public",
     "clean:modules": "rimraf node_modules *.lock *.log"
   },
   "devDependencies": {
@@ -20,15 +21,19 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
+    "app-manifest-webpack-plugin": "^1.2.0",
     "babel-loader": "^8.0.6",
     "html-webpack-plugin": "^3.2.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-modal": "^3.11.2",
     "validator": "^12.2.0"
   }
 }

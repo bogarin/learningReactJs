@@ -1,5 +1,6 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { modulo } = require("./webpack.configs/plugins");
+
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
@@ -21,12 +22,19 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"]
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader"
+        ]
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./index.html"
-    })
-  ]
+  plugins: modulo(false)
 };
