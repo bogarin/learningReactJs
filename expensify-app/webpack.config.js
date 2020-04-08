@@ -18,7 +18,8 @@ module.exports = {
   plugins: modulo(false),
   devtool: "eval-cheap-module-source-map",
   devServer: {
-    port: 4800,
-    historyApiFallback: true
+    historyApiFallback: true,
+    contentBase: path.join(__dirname, "scripts"),
+    port: 4800
   }
-};
+};  
